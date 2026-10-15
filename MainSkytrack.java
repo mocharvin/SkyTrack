@@ -88,34 +88,72 @@ public class MainSkytrack {
         int menu;
         do {
             clear();
-            System.out.println("===== SKYTRACK =====");
-            System.out.println("1. Lihat daftar penerbangan");
-            System.out.println("2. Cari penerbangan (kode)");
-            System.out.println("3. Lihat penumpang penerbangan");
-            System.out.println("4. Pesan tiket");
-            System.out.println("5. Tiket saya");
-            System.out.println("6. Check-in");
-            System.out.println("7. Batalkan tiket");
-            System.out.println("0. Keluar");
-            System.out.print("Pilih: ");
+            System.out.println("=========================================");
+            System.out.println("             SYSTEM SKYTRACK             ");
+            System.out.println("=========================================");
+            System.out.println(" 1. Informasi & Lihat Data");
+            System.out.println(" 2. Pesan Tiket");
+            System.out.println(" 3. Check-in");
+            System.out.println(" 4. Batalkan Pesanan");
+            System.out.println(" 0. Keluar");
+            System.out.println("=========================================");
+            System.out.print("Pilih menu [0-4]: ");
             menu = angka();
             clear();
             switch (menu) {
-                case 1: lihat(); break;
-                case 2: cari(); break;
-                case 3: lihatPenumpang(); break;
-                case 4: pesan(); break;
-                case 5: tiketSaya.tampil(); break;
-                case 6: checkIn(); break;
-                case 7: batal(); break;
-                case 0: System.out.println("Terima kasih!"); break;
-                default: System.out.println("Menu tidak ada.");
+                case 1: menuLihat(); break;
+                case 2: pesan(); break;
+                case 3: checkIn(); break;
+                case 4: batal(); break;
+                case 0: 
+                    System.out.println("=========================================");
+                    System.out.println(" Terima kasih telah menggunakan Skytrack!");
+                    System.out.println("=========================================");
+                    break;
+                default: 
+                    System.out.println("[!] Menu tidak valid.");
             }
-            if (menu != 0) {
-                System.out.print("\nTekan Enter untuk kembali...");
+            if (menu != 0 && menu != 1) {
+                System.out.print("\nTekan Enter untuk kembali ke menu utama...");
                 in.nextLine();
             }
         } while (menu != 0);
+    }
+
+    static void menuLihat() {
+        int subMenu;
+        do {
+            clear();
+            System.out.println("=========================================");
+            System.out.println("        SUB-MENU INFORMASI & DATA        ");
+            System.out.println("=========================================");
+            System.out.println(" 1. Lihat Daftar Penerbangan");
+            System.out.println(" 2. Cari Penerbangan (Kode)");
+            System.out.println(" 3. Lihat Penumpang Penerbangan");
+            System.out.println(" 4. Lihat Tiket Saya");
+            System.out.println(" 0. Kembali ke Menu Utama");
+            System.out.println("=========================================");
+            System.out.print("Pilih sub-menu [0-4]: ");
+            subMenu = angka();
+            clear();
+            switch (subMenu) {
+                case 1: lihat(); break;
+                case 2: cari(); break;
+                case 3: lihatPenumpang(); break;
+                case 4: 
+                System.out.println("=========================================");
+                System.out.println("            DAFTAR TIKET SAYA              ");
+                System.out.println("=========================================");
+                    tiketSaya.tampil(); 
+                    break;
+                case 0: break;
+                default: System.out.println("[!] Sub-menu tidak valid.");
+            }
+            if (subMenu != 0) {
+                System.out.print("\nTekan Enter untuk kembali ke sub-menu...");
+                in.nextLine();
+            }
+        } while (subMenu != 0);
     }
 
     static void clear() {
@@ -157,21 +195,45 @@ public class MainSkytrack {
     }
 
     static Penerbangan pilihPenerbangan() {
+        System.out.println("=========================================");
         penerbangan.tampilMaju();
-        System.out.print("\nPilih nomor penerbangan: ");
+        System.out.println("=========================================");
+        System.out.print("\nPilih nomor penerbangan [1-4]: ");
         Penerbangan p = penerbangan.ambil(angka() - 1);
         if (p == null) System.out.println("Nomor tidak tersedia.");
         return p;
     }
 
     static void lihat() {
-        System.out.print("1. Maju  2. Mundur : ");
+        System.out.println("=========================================");
+        System.out.println("            URUTKAN JADWAL               ");
+        System.out.println("=========================================");
+        System.out.println(" 1. Keberangkatan Lebih Awal");
+        System.out.println(" 2. Keberangkatan Paling Akhir");
+        System.out.println("=========================================");
+        System.out.print("Pilih [1/2]: ");
+        int pil = angka();
         System.out.println();
-        if (angka() == 2) penerbangan.tampilMundur();
-        else penerbangan.tampilMaju();
+        if (pil == 2) {
+            System.out.println("=========================================");
+            penerbangan.tampilMundur();
+            System.out.println("=========================================");
+        } else if (pil == 1) {
+            System.out.println("=========================================");
+            penerbangan.tampilMaju();
+            System.out.println("=========================================");
+        } else {
+            System.out.println("[!] Pilihan tidak valid. Menampilkan jadwal standar (Awal):");
+            System.out.println("=========================================");
+            penerbangan.tampilMaju();
+            System.out.println("=========================================");
+        }
     }
 
     static void cari() {
+        System.out.println("=========================================");
+        penerbangan.tampilMaju();
+        System.out.println("=========================================");
         System.out.print("Kode penerbangan: ");
         Penerbangan p = penerbangan.cari(in.nextLine().trim());
         if (p == null) System.out.println("Tidak ditemukan.");
