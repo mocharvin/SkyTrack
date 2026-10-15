@@ -1,6 +1,6 @@
 <img width="4128" height="1024" alt="Gemini_Generated_Image_su3qbpsu3qbpsu3q" src="https://github.com/user-attachments/assets/8d047732-dd94-468b-aaf5-f107dd73ae1d" />
 <div>
-  <h1 align="center"> SkyTack </h1>
+  <h1 align="center"> SkyTack: Sistem Reservasi Tiket Pesawat</h1>
   <p>Program SKYTRACK merupakan aplikasi konsol berbasis Java yang berfokus pada layanan sistem reservasi dan antrean tiket pesawat langsung dari sudut pandang penumpang.</p>
 
   <h2>Fitur Utama:</h2>
