@@ -17,6 +17,34 @@
     <h3>❌ Pembatalan Tiket:</h3>
       <p>Membatalkan pesanan tiket selama belum melakukan check-in, sehingga nomor kursi tersebut akan otomatis kembali kosong dan bisa dipesan ulang.</p>
 
+<h2>Implementasi pada ADT, Inheritance, dan Linked List</h2>
+    <h3>1. Abstract Data Type (ADT)</h3>
+    <p>ADT diterapkan melalui pembungkusan data (encapsulation) ke dalam kelas bertipe entitas khusus yang menyembunyikan detail atribut secara private:</p>
+    <ul>
+      <li>Tiket: Membungkus data tiket seperti kode, status, kursi, harga, dan objek Penumpang beserta method operasionalnya seperti checkIn().</li>
+      <li>Penerbangan: Membungkus atribut penerbangan (asal, tujuan, jam, kapasitas) beserta data internal daftarTiket berbasis SinglyLinkedList. Memiliki method operasional seperti pesan(), batalkan(), dan sisaKursi().</li>
+    </ul>
+    <h3>2. Inheritance (Pewarisan) & Polymorphism</h3>
+    <p>Inheritance diterapkan pada hirarki kelas penumpang untuk membedakan tipe dan fasilitas:</p>
+    <ul>
+      <li>Penumpang bertindak sebagai super-class (parent).</li>
+      <li>PenumpangReguler dan PenumpangVIP merupakan sub-class (child) yang meng-ingat atribut nama melalui super(nama).</li>
+      <li>Polymorphism (Method Overriding): Method getJenis(), getFasilitas(), dan hitungHarga() di-override oleh kelas turunan. Misal, PenumpangVIP meng-override harga menjadi 1,5x lipat dan mengubah daftar fasilitasnya. </li>
+    </ul>
+    <h3>3. Linked List</h3>
+    <p>Program ini mengimplementasikan tiga struktur variabel Node penunjuk data:</p>
+    <ul>
+      <h4>Singly Linked List</h4>
+        <li>Struktur: Memiliki penunjuk head dan pointer next.</li>
+        <li>Penggunaan: Menyimpan daftar tiket per penerbangan (daftarTiket) dan tiket milik pengguna (tiketSaya). Penumpang VIP disisipkan di depan (tambahDepan) untuk prioritas, sedangkan Reguler disisipkan di belakang (tambahBelakang).</li>
+      <h4>Doubly Linked List</h4>
+        <li>Struktur: Memiliki penunjuk head & tail serta dua pointer (next dan prev).</li>
+        <li>Penggunaan: Menyimpan daftar penerbangan. Digunakan untuk traversal dua arah, yaitu melihat jadwal dari awal (tampilMaju) maupun dari paling akhir (tampilMundur).</li>
+      <h4>Circular Linked List</h4>
+        <li>Struktur: Pointer next dari node terakhir (tail) selalu menunjuk kembali ke node pertama (head).</li>
+        <li>Penggunaan: Mengatur antrean loket check-in (loket) secara bergiliran (round-robin) melalui method ambilGiliran().</li>
+    </ul>
+
   <h2>Aspek CRUD dalam Implementasi Kode:</h2>
     <p>Berdasarkan kode program SKYTRACK yang telah kami buat, program ini sudah memenuhi seluruh aspek CRUD (Create, Read, Update, Delete) sebagai dasar sistem informasi. Berikut adalah rincian implementasi aspek CRUD di dalam kodenya:</p>
     <h3>1. Create (Menambahkan Data)</h3>
