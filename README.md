@@ -76,4 +76,9 @@
     <ul>
       <li>Membatalkan Tiket: Method batal() menghapus data tiket dari tiketSaya dan dari daftarTiket di objek Penerbangan menggunakan method hapus(kode). Hal ini juga secara otomatis mengosongkan kembali nomor kursi yang sebelumnya terisi.</li>
     </ul>
+
+  <p align="center">PROGRAM STUDI TEKNIK INFORMATIKA</p>
+  <p align="center">FAKULTAS TEKNIK</p>
+  <p align="center">UNIVERSITAS MATARAM</p>
+  <p align="center">2026/2027</p>
 </div>
