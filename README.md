@@ -3,6 +3,15 @@
   <h1 align="center"> SkyTack: Sistem Reservasi Tiket Pesawat</h1>
   <p>Program SKYTRACK merupakan aplikasi konsol berbasis Java yang berfokus pada layanan sistem reservasi dan antrean tiket pesawat langsung dari sudut pandang penumpang.</p>
 
+  <h2>Kelompok: Pengen Jago Ngoding</h2>
+  <h2>Anggota:</h2>
+  <ol>
+    <li>Lalu Hajiril Akbar (F1D02510066)</li>
+    <li>Miftahurrahman (F1D02510074)</li>
+    <li>Muhamad Arvin (F1D02510078)</li>
+    <li>Andika Ramdhanu (F1D02510104)</li>
+  </ol>
+
   <h2>Fitur Utama:</h2>
     <h3>🔍 Mencari & Melihat Jadwal Penerbangan:</h3>
       <p>Menampilkan daftar rute penerbangan yang tersedia (bisa dilihat urut maju atau mundur) serta mencari detail penerbangan spesifik berdasarkan kode penerbangannya.</p>
